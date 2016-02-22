@@ -1,0 +1,67 @@
+{
+	"version": 1,
+	"allow_edit": true,
+	"plugins": [],
+	"panes": [
+		{
+			"width": 1,
+			"row": {
+				"3": 1
+			},
+			"col": {
+				"3": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "Temperature",
+						"value": "datasources[\"Home\"][\"msg\"][\"temperature\"]",
+						"units": "C",
+						"min_value": 0,
+						"max_value": 100
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"3": 1
+			},
+			"col": {
+				"3": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "Humidity",
+						"value": "datasources[\"Home\"][\"msg\"][\"humidity\"]",
+						"min_value": 0,
+						"max_value": 100
+					}
+				}
+			]
+		}
+	],
+	"datasources": [
+		{
+			"name": "Home",
+			"type": "paho_mqtt",
+			"settings": {
+				"server": "mqtt.espert.io",
+				"port": 8000,
+				"use_ssl": false,
+				"client_id": "clientId-w0RUfpdXgC",
+				"username": "",
+				"password": "",
+				"topic": "ESPert/15656332/Status",
+				"json_data": true
+			}
+		}
+	],
+	"columns": 3
+}
